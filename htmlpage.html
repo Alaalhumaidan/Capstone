@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search and Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .results {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://openclipart.org/image/800px/310085" alt="Logo" width="200" height="auto">
+    </header>
+    <div class="container">
+        <h1>Online Diagnoses!</h1>
+        <p>Keep in mind that this online test is not necessarily accurate, please be advised to visit a certified doctor! </p>
+        <input type="text" id="topicInput" placeholder="Please write up to 512 words on what do you feel!">
+        <button onclick="searchTopic()">Diagnose me!</button>
+        <div class="results" id="resultsBox">
+            <!-- Results will be displayed here -->
+        </div>
+    </div>
+
+    <!-- JavaScript to handle the button click and display results -->
+    <script>
+        function searchTopic() {
+            // You can add your backend logic here to fetch and display results
+            // For simplicity, this example displays static results
+            const topicInput = document.getElementById("topicInput").value;
+            const resultsBox = document.getElementById("resultsBox");
+            resultsBox.innerHTML = `<h2>Results for: ${topicInput}</h2>
+                                     <p>Result 1: % Neurotypical .</p>
+                                     <p>Result 2: % Anxiety.</p>
+                                     <p>Result 3: % Depression.</p>`;
+        }
+    </script>
+</body>
+</html>
